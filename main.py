@@ -46,7 +46,11 @@ def main():
         elif choice == '3':
             print("\n--- ค้นหาประวัติ ---")
             # TODO: รับชื่อ -> search_member() -> เจอ: print ข้อมูล | ไม่เจอ: print ไม่พบชื่อในระบบ
-            print("!! เมนูนี้ยังไม่ถูกเชื่อม")
+            personal = input('ค้นหาประวัติ: ')
+            if search_member(personal) == None:
+                print('ไม่พบชื่อในระบบ')
+            else:
+                print(search_member(personal))
 
         # ---------- เมนู 4 ----------
         elif choice == '4':
