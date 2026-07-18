@@ -76,18 +76,37 @@ def main():
         # ---------- เมนู 5 ----------
         elif choice == '5':
             print("\n=== คลังอาวุธ ===")
-            show_catalog([weapons_catalog])
-            pass
+            show_catalog()
+            weapon = input("เลือกอาวุธ (1-3) : ")
+            dict_weapon = weapons_catalog[weapon]
+            name = str(input("ระบุชื่อลูกน้องที่จะสวมใส่ : "))
+            find_name = search_member(name)
+            print(equip_item(find_name, dict_weapon))
+
+
+            
             # TODO: show_catalog() -> รับรหัสอาวุธ (หาใน weapons_catalog) -> รับชื่อคน (search_member())
             #       -> equip_item() -> print ข้อความผล และถ้าสำเร็จ print ค่าพลังใหม่
-            print("!! เมนูนี้ยังไม่ถูกเชื่อม")
 
         # ---------- เมนู 6 (OPTIONAL) ----------
         elif choice == '6':
             print("\n--- ส่งไปทำภารกิจ ---")
-            # TODO: รับชื่อ -> search_member() -> send_mission()
+            name = input("ชื่อสมาชิก: ")
+            person = search_member(name)
+
+            if person:
+                result = send_mission(person)
+
+                if result["status"]:
+                    print(f"สำเร็จ! ได้รับเงินรางวัล {result['reward']}")
+                    print(f"เงินปัจจุบัน: {person['money']}")
+                else:
+                    remove_member(name)
+                    print("ล้มเหลว! สมาชิกถูกลบออกจากแก๊ง")
+            else:
+                print("ไม่พบสมาชิก")
             #       -> สำเร็จ: print เงินรางวัล + ยอดเงินปัจจุบัน | ล้มเหลว: remove_member() + print ถูกลบ
-            print("!! เมนูนี้ยังไม่ถูกเชื่อม")
+
 
         elif choice == '7':
             print("ปิดระบบ...")

@@ -1,16 +1,14 @@
 # =====================================================
-#  weapon_shop/show_catalog.py — คนรับผิดชอบ: PETCHYPRETTYBOY
+# weapon_shop/show_catalog.py — คนรับผิดชอบ: PETCHYPRETTYBOY
 # =====================================================
 from data import weapons_catalog
 
-def show_catalog (weapons_catalog):
+def show_catalog ():
     print("SHOW WEAPONS : ")
-    print(weapons_catalog)
+    for order in weapons_catalog:
+        weapon = weapons_catalog[order]
+        print (f"[{order}] {weapon['name']} | ราคา: {weapon['price']} พลัง: {weapon['bonus']}")
 
 
-while True:
-
-    if __name__ == "__main__":
-        show_catalog(weapons_catalog)   
-
-    break
+# if name == "main":
+#     show_catalog()
