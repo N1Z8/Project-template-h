@@ -2,7 +2,14 @@
 #  missions/send_mission.py — คนรับผิดชอบ: ______________________
 # =====================================================
 
-# TODO: (OPTIONAL) สร้างฟังก์ชัน send_mission(person)
+def send_mission(person):
+    if person["power"] >= 7 :
+        person["money"] += 300000
+        return {"status": True, "reward": 300000}
+
+    else:
+        person["power"] <= 7 
+        return {"status": False, "reward": 0}
 #   - power ของ person >= 7 -> บวกเงินรางวัล 300000 เข้าเงินของ person
 #     แล้ว return {"status": True, "reward": 300000}
 #   - ไม่ถึงเกณฑ์ -> return {"status": False, "reward": 0}
