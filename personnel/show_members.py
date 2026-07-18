@@ -1,0 +1,12 @@
+# =====================================================
+#  personnel/show_members.py — คนรับผิดชอบ: ______________________
+# =====================================================
+from data import family_members
+
+# TODO: สร้างฟังก์ชัน show_members()
+#   - print ข้อมูลลูกน้องทุกคนใน family_members บรรทัดละคน (ชื่อ, ตำแหน่ง, ความโหด, อาวุธ)
+
+
+# ทดสอบ: python -m personnel.show_members
+if __name__ == "__main__":
+    show_members()   # ต้องเห็น Tony กับ Luigi คนละบรรทัด
