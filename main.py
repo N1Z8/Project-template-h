@@ -8,13 +8,13 @@
 #  -> งานแรกของทุกคน: สร้างโครงฟังก์ชันตัวเอง (def ... + pass) แล้ว push ทันที
 # =====================================================
 from data import weapons_catalog
-from personnel.add_member import add_member
-from personnel.show_members import show_members
+# from personnel.add_member import add_member
+# from personnel.show_members import show_members
 from personnel.search_member import search_member
-from personnel.remove_member import remove_member
-from weapon_shop.show_catalog import show_catalog
-from weapon_shop.equip_item import equip_item
-from missions.send_mission import send_mission
+# from personnel.remove_member import remove_member
+# from weapon_shop.show_catalog import show_catalog
+# from weapon_shop.equip_item import equip_item
+# from missions.send_mission import send_mission
 
 def main():
     while True:
@@ -46,7 +46,11 @@ def main():
         elif choice == '3':
             print("\n--- ค้นหาประวัติ ---")
             # TODO: รับชื่อ -> search_member() -> เจอ: print ข้อมูล | ไม่เจอ: print ไม่พบชื่อในระบบ
-            print("!! เมนูนี้ยังไม่ถูกเชื่อม")
+            personal = input('ค้นหาประวัติ: ')
+            if search_member(personal) == None:
+                print('ไม่พบชื่อในระบบ')
+            else:
+                print(search_member(personal))
 
         # ---------- เมนู 4 ----------
         elif choice == '4':
