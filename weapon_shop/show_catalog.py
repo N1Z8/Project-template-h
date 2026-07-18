@@ -1,12 +1,16 @@
 # =====================================================
-#  weapon_shop/show_catalog.py — คนรับผิดชอบ: ______________________
+#  weapon_shop/show_catalog.py — คนรับผิดชอบ: PETCHYPRETTYBOY
 # =====================================================
 from data import weapons_catalog
 
-# TODO: สร้างฟังก์ชัน show_catalog()
-#   - print อาวุธทุกชิ้นใน weapons_catalog บรรทัดละชิ้น (รหัส, ชื่อ, ราคา, พลังโบนัส)
+def show_catalog (weapons_catalog):
+    print("SHOW WEAPONS : ")
+    print(weapons_catalog)
 
 
-# ทดสอบ: python -m weapon_shop.show_catalog
-if __name__ == "__main__":
-    show_catalog()   # ต้องเห็นอาวุธครบ 3 ชิ้น
+while True:
+
+    if __name__ == "__main__":
+        show_catalog(weapons_catalog)   
+
+    break
