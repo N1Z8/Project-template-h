@@ -6,9 +6,9 @@ from data import family_members
 # TODO: สร้างฟังก์ชัน remove_member(target_name)
 #   - หาคนที่ชื่อตรงกับ target_name (ไม่สนตัวพิมพ์ใหญ่/เล็ก) แล้วลบออกจาก family_members
 #   - ลบสำเร็จ -> return True | ไม่เจอ -> return False
-def remove_member(name):
+def remove_member(target_name):
     for i in family_members:
-        if i["name"].lower() == name.lower():
+        if i["name"].lower() == target_name.lower():
             family_members.remove(i)
             return True
     return False

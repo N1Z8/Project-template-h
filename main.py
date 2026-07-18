@@ -34,13 +34,21 @@ def main():
             print("\n--- เพิ่มลูกน้องใหม่ ---")
             # TODO: รับ name, age, power, money (age/power ใช้ int(), money ใช้ float())
             #       -> add_member(...) -> print เพิ่ม (ชื่อ) ในตำแหน่ง (role) เรียบร้อยแล้ว
-            print("!! เมนูนี้ยังไม่ถูกเชื่อม")
+            name = input("Enter your name : ")
+            age = int(input("Enter your age : "))
+            power = int(input("Enter your power : "))
+            money = float(input("Enter your money : "))
+            add_member(name, age, power, money)
 
+            print(f"เพื่ม {name} ใน name เเล้ว ")
+            print(f"เพื่ม {age} ใน อายุ เเล้ว ")
+            print(f"เพื่ม {power} ใน power เเล้ว ")
+            print(f"เพื่ม {money} ใน money เเล้ว ")
         # ---------- เมนู 2 ----------
         elif choice == '2':
             print("\n--- รายชื่อลูกน้องทั้งหมด ---")
-            # TODO: เรียก show_members()
-            print("!! เมนูนี้ยังไม่ถูกเชื่อม")
+            show_members()
+            
 
         # ---------- เมนู 3 ----------
         elif choice == '3':
@@ -55,12 +63,21 @@ def main():
         # ---------- เมนู 4 ----------
         elif choice == '4':
             print("\n--- สั่งเก็บลูกน้อง ---")
+            target_name = input("รับชื่อลูกน้องที่จะสั่งเก็บ: ")
+            remove_target = remove_member(target_name)
+            if remove_target == True:
+                print("สั่งเก็บเรียบร้อย")
+            else:
+                remove_target == False, print("ไม่พบชื่อในระบบ")
+
+            
             # TODO: รับชื่อ -> remove_member() -> True: print สั่งเก็บเรียบร้อย | False: print ไม่พบชื่อในระบบ
-            print("!! เมนูนี้ยังไม่ถูกเชื่อม")
 
         # ---------- เมนู 5 ----------
         elif choice == '5':
             print("\n=== คลังอาวุธ ===")
+            show_catalog([weapons_catalog])
+            pass
             # TODO: show_catalog() -> รับรหัสอาวุธ (หาใน weapons_catalog) -> รับชื่อคน (search_member())
             #       -> equip_item() -> print ข้อความผล และถ้าสำเร็จ print ค่าพลังใหม่
             print("!! เมนูนี้ยังไม่ถูกเชื่อม")
